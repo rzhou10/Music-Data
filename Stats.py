@@ -35,7 +35,7 @@ class Stats():
                 self.shortestAlbum = lengthInSec
                 self.shortestAlbumName = titleList[i + 1]
 
-            totalTime += (timeParts[0] * 60 + timeParts[1]) * 60 + timeParts[2]
+        totalTime += (timeParts[0] * 60 + timeParts[1]) * 60 + timeParts[2]
         averageInSec = totalTime / len(lengthList)
         totalSecs, sec = divmod(averageInSec, 60)
         hour, minute = divmod(totalSecs, 60)
