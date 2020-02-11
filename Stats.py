@@ -34,24 +34,28 @@ class Stats():
             if lengthInSec < self.shortestAlbum:
                 self.shortestAlbum = lengthInSec
                 self.shortestAlbumName = titleList[i + 1]
+            totalTime += lengthInSec
 
-        totalTime += (timeParts[0] * 60 + timeParts[1]) * 60 + timeParts[2]
-        averageInSec = totalTime / len(lengthList)
-        totalSecs, sec = divmod(averageInSec, 60)
-        hour, minute = divmod(totalSecs, 60)
+        averageInSec = int(totalTime / len(lengthList))
+        hoursMin, sec = divmod(averageInSec, 60)
+        hour, minute = divmod(hoursMin, 60)
         self.averageLength = f"{hour}:{minute}:{sec}"
     
     def getAverageLength(self):
         return self.averageLength
     
     def getLongestAlbum(self):
-        return self.longestAlbum
+        hoursMin, sec = divmod(self.longestAlbum, 60)
+        hour, minute = divmod(hoursMin, 60)
+        return f"{hour}:{minute}:{sec}"
     
     def getLongestAlbumName(self):
         return self.longestAlbumName
     
     def getShortestAlbum(self):
-        return self.shortestAlbum
+        hoursMin, sec = divmod(self.shortestAlbum, 60)
+        hour, minute = divmod(hoursMin, 60)
+        return f"{hour}:{minute}:{sec}"
     
     def getShorestAlbumName(self):
         return self.shortestAlbumName
