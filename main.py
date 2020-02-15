@@ -25,7 +25,7 @@ dictCountries = allStats.setStats(allCountries)
 
 dictCountries.pop("-", None)
 
-allStats.setLengthStats(allLengths, allAlbums)
+allStats.setLengthStats(allLengths, allAlbums, allBands)
 
 book = load_workbook("Music Data.xlsx")
 
@@ -36,8 +36,8 @@ labelsSheet = book["Record Label"]
 countrySheet = book["Country of Origin"]
 
 print(f"The average length of the albums I've heard is {allStats.getAverageLength()}.")
-print(f"The shortest album I've heard anything from is {allStats.getShorestAlbumName()} with a runtime of {allStats.getShortestAlbum()}.")
-print(f"The longest album I've heard anything from is {allStats.getLongestAlbumName()} with a runtime of {allStats.getLongestAlbum()}.")
+print(f"The shortest album I've heard anything from is {allStats.getShorestAlbumName()} by {allStats.getShortestAlbumband()} with a runtime of {allStats.getShortestAlbum()}.")
+print(f"The longest album I've heard anything from is {allStats.getLongestAlbumName()} by {allStats.getLongestAlbumBand()} with a runtime of {allStats.getLongestAlbum()}.")
 
 print("Please check out the excel sheet for more info!")
 
