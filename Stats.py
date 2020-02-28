@@ -44,11 +44,19 @@ class Stats():
         hoursMin, sec = divmod(averageInSec, 60)
         hour, minute = divmod(hoursMin, 60)
         hourStr = f"{hour}"
+        minuteStr = f"{minute}"
+        secStr = f"{sec}"
 
         if 0 <= hour <= 9:
             hourStr = "0" + str(hour)
 
-        self.averageLength = f"{hourStr}:{minute}:{sec}"
+        if 0 <= minute <= 9:
+            minuteStr = "0" + str(minute)
+
+        if 0 <= sec <= 9:
+            secStr = "0" + str(sec)
+
+        self.averageLength = f"{hourStr}:{minuteStr}:{secStr}"
     
     def getAverageLength(self):
         return self.averageLength
@@ -57,11 +65,19 @@ class Stats():
         hoursMin, sec = divmod(self.longestAlbum, 60)
         hour, minute = divmod(hoursMin, 60)
         hourStr = f"{hour}"
+        minuteStr = f"{minute}"
+        secStr = f"{sec}"
 
         if 0 <= hour <= 9:
             hourStr = "0" + str(hour)
+
+        if 0 <= minute <= 9:
+            minuteStr = "0" + str(minute)
+
+        if 0 <= sec <= 9:
+            secStr = "0" + str(sec)
             
-        return f"{hourStr}:{minute}:{sec}"
+        return f"{hourStr}:{minuteStr}:{secStr}"
     
     def getLongestAlbumName(self):
         return self.longestAlbumName
